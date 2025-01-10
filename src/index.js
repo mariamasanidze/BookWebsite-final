@@ -10,7 +10,9 @@ import BookList from "./components/BookList/BookList"; // Verify the path
 import BookDetails from "./components/BookDetails/BookDetails"; // Verify the path
 import Login from './Login'; // Verify the path
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <AppProvider>
     <BrowserRouter>
@@ -27,9 +29,11 @@ root.render(
     <Route path="book" element={<BookList/>} />
     {/* Remove leading / from nested route */}
     <Route path="book/:id" element={<BookDetails/>} />
+   
   </Route>
 </Routes>
 
     </BrowserRouter>
   </AppProvider>
 );
+
