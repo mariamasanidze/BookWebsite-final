@@ -37,7 +37,7 @@ const BookList = () => {
         </div>
       </div>
       <div class="flex justify-center mt-6">
-  <button class="px-6 py-3 bg-white text-gray-800 rounded-xl shadow-md hover:shadow-lg hover:bg-gray-100">
+  <button id='load-more' class="px-6 py-3 bg-white text-gray-800 rounded-xl shadow-md hover:shadow-lg hover:bg-gray-100">
     Load More
   </button>
 </div>
@@ -45,6 +45,44 @@ const BookList = () => {
     </section>
   )
 }
+// // Mock data for books
+// const books = Array.from({ length: 100 }, (_, i) => `Book ${i + 1}`);
+
+// // State variables
+// let booksPerPage = 20; // Number of books to load per click
+// let currentPage = 0;   // Tracks the current page
+
+// // Function to load books
+// function loadBooks() {
+//     const bookList = document.getElementById('book-list');
+//     const startIndex = currentPage * booksPerPage;
+//     const endIndex = startIndex + booksPerPage;
+
+//     // Get the next set of books
+//     const booksToLoad = books.slice(startIndex, endIndex);
+
+//     // Append books to the list
+//     booksToLoad.forEach(book => {
+//         const bookItem = document.createElement('div');
+//         bookItem.textContent = book;
+//         bookList.appendChild(bookItem);
+//     });
+
+//     // Update page
+//     currentPage++;
+
+//     // Hide the button if no more books are left to load
+//     if (currentPage * booksPerPage >= books.length) {
+//         document.getElementById('load-more').style.display = 'none';
+//     }
+// }
+
+// // Add click event to the Load More button
+// document.getElementById('load-more').addEventListener('click', loadBooks);
+
+// // Initial load
+// loadBooks();
+
 
 export default BookList
 
