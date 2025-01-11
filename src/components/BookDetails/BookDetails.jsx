@@ -26,7 +26,7 @@ const BookDetails = () => {
           const { description, title, covers, subject_places, subject_times, subjects } = data;
 
           const newBook = {
-            id, // Use the ID from params
+            id, 
             description: description
               ? typeof description === 'string'
                 ? description
@@ -37,7 +37,7 @@ const BookDetails = () => {
             subject_places: subject_places ? subject_places.join(", ") : "No subject places found",
             subject_times: subject_times ? subject_times.join(", ") : "No subject times found",
             subjects: subjects ? subjects.join(", ") : "No subjects found",
-            price: `$${(Math.random() * 50 + 10).toFixed(2)}`, // Generate a random price between $10 and $60
+            price: `$${(Math.random() * 50 + 10).toFixed(2)}`, 
           };
           setBook(newBook);
         } else {
@@ -57,37 +57,34 @@ const BookDetails = () => {
   return (
     <section className="book-details">
       <div className="container">
-        {/* Go Back Button */}
+        
         <button type="button" className="flex flex-c back-btn" onClick={() => navigate('/home/book')}>
           <FaArrowLeft size={22} />
           <span className="fs-18 fw-6">Go Back</span>
         </button>
 
-        {/* Book Details */}
+        
         <div className="book-details-content grid">
           <div className="book-details-img">
             <img src={book?.cover_img} alt="cover img" />
           </div>
           <div className="book-details-info">
-            {/* Title */}
+            
             <div className="book-details-item title">
               <span className="fw-6 fs-24">{book?.title}</span>
             </div>
 
-            {/* Description */}
+            
             <div className="book-details-item description">
               <p>{book?.description}</p>
             </div>
 
-            {/* Price */}
+            
             <div className="book-details-item price">
               <span className="fw-6 fs-20">Price: </span>
               <span className="text-green-600 fw-7 fs-22">{book?.price}</span>
             </div>
 
-            
-
-            {/* Navigate to Favorites Page Button */}
             <button
               className="px-14 py-4 mt-5 font-semibold text-white bg-blue-500 rounded-xl hover:bg-blue-700"
               onClick={() => navigate('/favorites')}
